@@ -1,0 +1,44 @@
+name: Build blog index
+
+# Regenerates blog/index.json whenever you add or edit a post, then commits the
+# updated index back to the branch. Your publishing workflow is simply:
+#   1. add a Markdown file under blog/posts/
+#   2. git commit && git push
+# This Action takes care of the rest.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'blog/posts/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Rebuild blog index
+        run: node scripts/build-blog-index.mjs
+
+      - name: Commit updated index
+        run: |
+          if [ -n "$(git status --porcelain blog/index.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add blog/index.json
+            git commit -m "chore(blog): rebuild index [skip ci]"
+            git push
+          else
+            echo "blog/index.json already up to date"
+          fi

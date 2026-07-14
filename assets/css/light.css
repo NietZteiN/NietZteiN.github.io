@@ -61,6 +61,25 @@ h1, h2, h3, h4, b {
 	color: #717378;
 }
 
+/* BLOG POSTS (Markdown) */
+.blog-card {
+	background-color: #fff;
+}
+
+.blog-post-body code {
+	background-color: #f2f3f5;
+	color: #24292f;
+}
+
+.blog-post-body pre {
+	background-color: #f6f8fa;
+}
+
+.blog-post-body blockquote {
+	color: #57606a;
+	border-left-color: #d0d7de;
+}
+
 /* TEACHING RELATED */
 .academic-name {
 	color: #22517d;

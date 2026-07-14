@@ -7,13 +7,13 @@ $(document).ready(function(){
 	$('#conferencesContent').hide();
 	$('#projectsContent').hide();
 	$('#blogContent').hide();
+	$('#postsContent').hide();
 	$('#academicContent').hide();
 	$('#particularContent').hide();
 	// $('#photosContent').hide();
 
 	// Options menu is hidden by default
 	$('#theme').hide();
-	$('#lan').hide();
 
 	// Handle 'About Me' content
 	$('#aboutme').click(function(e) {
@@ -81,6 +81,32 @@ $(document).ready(function(){
 
 			// Show current content
 			activateDiv('#blogContent');
+		}
+	});
+
+	// Handle 'Blog' (Markdown posts) content
+	$('#posts').click(function(e) {
+
+		// Prevent the href="#" default from clobbering the #/blog hash we set below.
+		e.preventDefault();
+
+		// If the div has already the class active, no need to reload the divs...
+		if(!$(e.target).hasClass('active')) {
+			// Update navbar
+			clearActiveLinks();
+			activateLink(e);
+
+			// Hide other contents
+			clearActiveDivs();
+
+			// Show current content
+			activateDiv('#postsContent');
+		}
+
+		// Render the post list (or honor a deep-linked post) via the blog router.
+		if (window.Blog) {
+			if (window.location.hash === '#/blog') Blog.applyRoute();
+			else window.location.hash = '#/blog';
 		}
 	});
 
@@ -237,24 +263,23 @@ $(document).ready(function(){
 	if (localStorage.theme == "dark") {
 		$("link[href='assets/css/light.css']").remove();
 		$('<link>').appendTo('head').attr({
-			type: 'text/css', 
+			type: 'text/css',
 			rel: 'stylesheet',
 			href: 'assets/css/dark.css'
 		});
 		$('#theme').empty().append("<i class='fa-duotone fa-lightbulb-slash'></i>");
+		if (window.Blog) Blog.setHljsTheme(true);
 	}
 
-	// Controls the option menu toggler to show/hide the language and theme selectors
+	// Controls the option menu toggler to show/hide the theme selector
 	$('#options-toggler').click(function(e) {
 		if(!$(e.currentTarget).hasClass('active')) {
 			$(e.currentTarget).addClass('active');
 			$('#theme').show("fast");
-			$('#lan').show("fast");
 		}
 		else {
 			$(e.currentTarget).removeClass('active');
 			$('#theme').hide("fast");
-			$('#lan').hide("fast");
 		}
 	})
 
@@ -264,37 +289,29 @@ $(document).ready(function(){
 			$('#theme').empty().append("<i class='fa-duotone fa-lightbulb-slash'></i>");
 
 			localStorage.theme = "dark"
-			
+
 			$("link[href='assets/css/light.css']").remove();
 			$('<link>').appendTo('head').attr({
-				type: 'text/css', 
+				type: 'text/css',
 				rel: 'stylesheet',
 				href: 'assets/css/dark.css'
 			});
+			if (window.Blog) Blog.setHljsTheme(true);
 		}
 		else {
 			$('#theme').empty().append("<i class='fa-duotone fa-lightbulb'></i>");
 
 			localStorage.theme = "light"
-			
+
 			$("link[href='assets/css/dark.css']").remove();
 			$('<link>').appendTo('head').attr({
-				type: 'text/css', 
+				type: 'text/css',
 				rel: 'stylesheet',
 				href: 'assets/css/light.css'
 			});
+			if (window.Blog) Blog.setHljsTheme(false);
 		}
 	})
-
-	
-	// Create the language manager
-	const langManager = new LanguageManager();
-	
-	// Alternates between the different available languages
-	$('#lan').click(function() {
-        const newLang = langManager.getNextLanguage();
-        langManager.setLanguage(newLang);
-    });
 });
 
 // Clears the active links

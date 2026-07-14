@@ -77,3 +77,31 @@ h1, h2, h3, h4, b {
 .student-name {
 	color: #00FFC1;
 }
+
+/* BLOG POSTS (Markdown) */
+.blog-short {
+	color: #9aa0a6;
+}
+
+.blog-card {
+	background-color: #2f2f2f;
+	border-color: #4a4a4a;
+}
+
+.blog-post-body a {
+	color: #8ab4f8;
+}
+
+.blog-post-body code {
+	background-color: #2b2b2b;
+	color: #e6e6e6;
+}
+
+.blog-post-body pre {
+	background-color: #1e1e1e;
+}
+
+.blog-post-body blockquote {
+	color: #b8bfc9;
+	border-left-color: #4a4a4a;
+}

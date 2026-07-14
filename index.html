@@ -30,6 +30,11 @@
 	<link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
 	<link rel="stylesheet" href="assets/css/main.css">
 
+	<!-- Blog: code highlighting (stylesheet swapped with the light/dark toggle) + math -->
+	<link id="hljs-theme" rel="stylesheet"
+		href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
 </head>
 
 <!-- Google tag (gtag.js) & Google Analytics -->
@@ -53,11 +58,9 @@
 
 <body>
 
-	<!-- Bottom rounded button -->
+	<!-- Bottom rounded buttons -->
 	<div class="options-button" id="options-toggler"><i class="fa-light fa-arrows-repeat"></i></div>
 	<div class="options-button" id="theme"><i class="fa-duotone fa-lightbulb"></i></div>
-	<div class="options-button" id="lan"><img class="lang-flag" src="https://flagcdn.com/w20/us.png"
-			alt="Flag indicating the english language is selected"></div>
 
 
 	<!-- Navbar  -->
@@ -67,48 +70,31 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="navbar-collapse collapse flex-grow-1 justify-content-center" id="collapsingNavbar3">
-				<ul class="navbar-nav mx-auto language" id="navbarList">
+				<ul class="navbar-nav mx-auto" id="navbarList">
 					<li class="nav-item">
-						<a class="nav-link active" id="aboutme" href="#" data-es="Sobre Mi" data-en="About Me">
-						</a>
+						<a class="nav-link active" id="aboutme" href="#">About Me</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" id="education" href="#" data-es="Educación" data-en="Education">
-						</a>
+						<a class="nav-link" id="education" href="#">Education</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" id="publications" href="#" data-es="Publicaciones" data-en="Publications">
-						</a>
+						<a class="nav-link" id="publications" href="#">Publications</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" id="blog" href="#" data-es="Textos y prensa" data-en="Writing &amp; press">
-						</a>
+						<a class="nav-link" id="blog" href="#">Writing &amp; press</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" id="academic" href="#" data-es="Enseñanza" data-en="Teaching">
-						</a>
-					</li>
-					<!-- <li class="nav-item">
-							<a class="nav-link" id="projects" href="#" 
-								data-es="Proyectos" 
-								data-en="Side Projects">
-							</a>
-						</li> -->
-					<li class="nav-item">
-						<a class="nav-link" id="conferences" href="#" data-es="Conferencias" data-en="Conferences">
-						</a>
+						<a class="nav-link" id="posts" href="#">Blog</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" id="experience" href="#" data-es="Experiencia" data-en="Experience">
-						</a>
+						<a class="nav-link" id="academic" href="#">Teaching</a>
 					</li>
-					<!-- Example using Photos -->
-					<!-- <li class="nav-item">
-							<a class="nav-link" id="photos" href="#" 
-								data-es="Fotos" 
-								data-en="Photos">
-							</a>
-						</li> -->
+					<li class="nav-item">
+						<a class="nav-link" id="conferences" href="#">Conferences</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="experience" href="#">Experience</a>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -118,7 +104,7 @@
 		<div class="row content" id="section-content">
 
 			<!-- Jack V. Le profile and contact info -->
-			<div id="leftPanel" class="col-md-3 language">
+			<div id="leftPanel" class="col-md-3">
 				<div class="row mb-3">
 					<div class="col">
 						<img src="https://github.com/nietztein.png"
@@ -129,10 +115,9 @@
 				<h3 class="mb-2">Jack V. Le</h3>
 
 				<p class="mb-4">
-					<span class="t-secondary"
-						data-es="Estudiante de licenciatura en Informática con Honores en la University of Texas at Dallas (UTD). "
-						data-en="Bachelor of Science in Computer Science with Honours student at the University of Texas at Dallas (UT Dallas). "></span>
-					<span data-es="Graduación prevista: dic. 2026." data-en="Expected graduation: Dec 2026."></span>
+					<span class="t-secondary">Bachelor of Science in Computer Science with Honours student at the
+						University of Texas at Dallas (UT Dallas). </span>
+					<span>Expected graduation: Dec 2026.</span>
 				</p>
 
 				<div class="row mb-2">
@@ -141,9 +126,7 @@
 					</div>
 
 					<div class="col-10">
-						Garland, TX,
-						<span data-es="Estados Unidos" data-en="United States">
-						</span>
+						Garland, TX, <span>United States</span>
 					</div>
 				</div>
 
@@ -163,8 +146,8 @@
 					</div>
 
 					<div class="col-10">
-						<a href="assets/documents/CV_Template_Academic.pdf" class="link-dark" target="_blank"
-							data-es="CV académico [PDF]" data-en="Academic CV [Updated 5/1/26]"></a>
+						<a href="assets/documents/CV_Template_Academic.pdf" class="link-dark" target="_blank">Academic CV
+							[Updated 5/1/26]</a>
 					</div>
 				</div>
 
@@ -203,37 +186,34 @@
 			<!-- About Me -->
 			<div class="col-md-8 offset-md-1 mb-5 active" id="aboutmeContent">
 				<div class="container">
-					<div class="row language">
-						<p class="mt-2 justify"
-							data-es="Investigador de pregrado en la Universidad de Texas en Dallas (UT Dallas) desde agosto de 2022, con honores Phi Kappa Phi y Collegium V. Su investigación se centra en los modelos de lenguaje — cómo representan el significado, dónde generalizan y dónde fallan — con intereses más amplios que conectan el aprendizaje automático con preguntas sobre cognición y descubrimiento científico. Ha realizado una pasantía de investigación DAAD RISE en Alemania y una pasantía orientada a políticas en CSET, además de trabajo aplicado en visión por computador, ingeniería de software y aprendizaje automático para materiales y texto científico. Imparte clase y califica cursos introductorios de informática y participa en organizaciones estudiantiles y labores de divulgación."
-							data-en="Undergraduate researcher at the University of Texas at Dallas since August 2022, with Phi Kappa Phi and Collegium V Honors. His research centers on language models — how they represent meaning, where they generalize, and where they break — with broader interests connecting machine learning to questions about cognition and scientific discovery. He has held a DAAD RISE research internship in Germany and a policy-oriented internship at CSET, alongside applied work in computer vision, software engineering, and ML for materials and scientific text. He teaches and grades introductory CS courses and is active in student organizations and outreach.">
-						</p>
+					<div class="row">
+						<p class="mt-2 justify">Undergraduate researcher at the University of Texas at Dallas since
+							August 2022, with Phi Kappa Phi and Collegium V Honors. His research centers on language
+							models — how they represent meaning, where they generalize, and where they break — with
+							broader interests connecting machine learning to questions about cognition and scientific
+							discovery. He has held a DAAD RISE research internship in Germany and a policy-oriented
+							internship at CSET, alongside applied work in computer vision, software engineering, and ML
+							for materials and scientific text. He teaches and grades introductory CS courses and is active
+							in student organizations and outreach.</p>
 
-						<h4 id="researchinterestsH4" class="mt-2" data-es="Áreas de Investigación"
-							data-en="Research Interests">
-						</h4>
+						<h4 id="researchinterestsH4" class="mt-2">Research Interests</h4>
 
 						<ul class="mt-1">
 
-							<li class="justify"
-								data-es="Modelos de lenguaje y la estructura del significado que aprenden — incluido el análisis de representaciones, la generalización y la evaluación conductual de sistemas frontera."
-								data-en="Language models and the structure of meaning they learn — including representation analysis, generalization, and behavioral evaluation of frontier systems.">
+							<li class="justify">Language models and the structure of meaning they learn — including
+								representation analysis, generalization, and behavioral evaluation of frontier systems.
 							</li>
 
-							<li class="justify mt-2"
-								data-es="Conexiones entre los grandes modelos de lenguaje y el procesamiento del lenguaje humano, con herramientas de la lingüística computacional y la ciencia cognitiva."
-								data-en="Connections between large language models and human language processing, drawing on tools from computational linguistics and cognitive science.">
-							</li>
+							<li class="justify mt-2">Connections between large language models and human language
+								processing, drawing on tools from computational linguistics and cognitive science.</li>
 
-							<li class="justify mt-2"
-								data-es="Intereses afines incluyen aprendizaje automático para texto científico y de patentes, ML para ciencia de materiales, y equidad y evaluación de la representación en sistemas de IA de alto riesgo."
-								data-en="Adjacent interests include machine learning for scientific and patent text, ML for materials science, and fairness and representation evaluation in high-stakes AI systems.">
-							</li>
+							<li class="justify mt-2">Adjacent interests include machine learning for scientific and patent
+								text, ML for materials science, and fairness and representation evaluation in high-stakes
+								AI systems.</li>
 
 						</ul>
 
-						<h4 id="honors-and-awards" class="mt-2" data-es="Premios y Distinciones"
-							data-en="Honors and Awards"></h4>
+						<h4 id="honors-and-awards" class="mt-2">Honors and Awards</h4>
 
 						<ul class="mt-1">
 
@@ -282,77 +262,48 @@
 			<!-- Education -->
 			<div class="col-md-8 offset-md-1 mb-5" id="educationContent">
 				<div class="container">
-					<div class="row mt-2 language">
-						<h2 class="academic-year-h2" data-en="University of Texas at Dallas"
-							data-es="Universidad de Texas en Dallas"></h2>
-						<div class="trnsf-thin"
-							data-es="Richardson, TX — agosto 2022 a la fecha; graduación prevista: dic. 2026"
-							data-en="Richardson, TX — August 2022–Present; expected graduation: Dec 2026">
-						</div>
+					<div class="row mt-2">
+						<h2 class="academic-year-h2">University of Texas at Dallas</h2>
+						<div class="trnsf-thin">Richardson, TX — August 2022–Present; expected graduation: Dec 2026</div>
 
-						<h3 class="h4 mt-3 mb-0" data-es="Grado en Ciencias de la Computación con Honores"
-							data-en="B.S. in Computer Science with Honours"></h3>
-						<p class="mt-2 justify"
-							data-es="Especializaciones secundarias (minors) en Matemáticas y Ciencia Política. GPA global 3.96/4.0; GPA solo en asignaturas de informática 3.96/4.0. Honores: Phi Kappa Phi y Collegium V Honors."
-							data-en="Minors in Mathematics and Political Science. GPA overall 3.96/4.0; CS-only GPA 3.96/4.0. Honors: The Honor Society of Phi Kappa Phi and Collegium V Honors.">
-						</p>
+						<h3 class="h4 mt-3 mb-0">B.S. in Computer Science with Honours</h3>
+						<p class="mt-2 justify">Minors in Mathematics and Political Science. GPA overall 3.96/4.0; CS-only
+							GPA 3.96/4.0. Honors: The Honor Society of Phi Kappa Phi and Collegium V Honors.</p>
 
-						<p class="mt-3 mb-1 justify"
-							data-en="Selected coursework at UT Dallas (titles as on transcript)"
-							data-es="Asignaturas seleccionadas en UT Dallas (títulos según el expediente)"></p>
+						<p class="mt-3 mb-1 justify">Selected coursework at UT Dallas (titles as on transcript)</p>
 						<ul class="mt-1 mb-2 ps-3 abme-honors-bullet">
-							<li class="justify" data-en="CS 4V98 — Undergraduate Research in Computer Science"
-								data-es="CS 4V98 — Undergraduate Research in Computer Science"></li>
-							<li class="justify mt-2" data-en="CS 4485 — Computer Science Project"
-								data-es="CS 4485 — Computer Science Project"></li>
-							<li class="justify mt-2" data-en="PSCI 4V76 — Archer Center Washington Internship"
-								data-es="PSCI 4V76 — Archer Center Washington Internship"></li>
-							<li class="justify mt-2" data-en="CS 4349 — Advanced Algorithm Design and Analysis"
-								data-es="CS 4349 — Advanced Algorithm Design and Analysis"></li>
-							<li class="justify mt-2" data-en="CS 4384 — Automata Theory"
-								data-es="CS 4384 — Automata Theory"></li>
-							<li class="justify mt-2" data-en="CS 4337 — Programming Language Paradigms"
-								data-es="CS 4337 — Programming Language Paradigms"></li>
-							<li class="justify mt-2" data-en="CS 4347 — Database Systems"
-								data-es="CS 4347 — Database Systems"></li>
-							<li class="justify mt-2"
-								data-en="CS 3377 — Systems Programming in UNIX and Other Environments"
-								data-es="CS 3377 — Systems Programming in UNIX and Other Environments"></li>
-							<li class="justify mt-2" data-en="CS 4341 — Digital Logic and Computer Design"
-								data-es="CS 4341 — Digital Logic and Computer Design"></li>
-							<li class="justify mt-2" data-en="CS 4141 — Digital Systems Laboratory"
-								data-es="CS 4141 — Digital Systems Laboratory"></li>
+							<li class="justify">CS 4V98 — Undergraduate Research in Computer Science</li>
+							<li class="justify mt-2">CS 4485 — Computer Science Project</li>
+							<li class="justify mt-2">PSCI 4V76 — Archer Center Washington Internship</li>
+							<li class="justify mt-2">CS 4349 — Advanced Algorithm Design and Analysis</li>
+							<li class="justify mt-2">CS 4384 — Automata Theory</li>
+							<li class="justify mt-2">CS 4337 — Programming Language Paradigms</li>
+							<li class="justify mt-2">CS 4347 — Database Systems</li>
+							<li class="justify mt-2">CS 3377 — Systems Programming in UNIX and Other Environments</li>
+							<li class="justify mt-2">CS 4341 — Digital Logic and Computer Design</li>
+							<li class="justify mt-2">CS 4141 — Digital Systems Laboratory</li>
 						</ul>
 
-						<h2 class="academic-year-h2 mt-4" data-en="Waseda University" data-es="Universidad Waseda"></h2>
-						<p class="trnsf-thin mb-2" data-en="Study abroad: academic year 2024–2025 · Tokyo, Japan"
-							data-es="Año académico en el extranjero: 2024–2025 · Tokio, Japón"></p>
-						<p class="mt-2 justify mb-3"
-							data-en="All coursework was taught in Japanese (readings, lectures, and assessments)."
-							data-es="Todas las asignaturas se cursaron en japonés (lecturas, clase y evaluación).">
-						</p>
+						<h2 class="academic-year-h2 mt-4">Waseda University</h2>
+						<p class="trnsf-thin mb-2">Study abroad: academic year 2024–2025 · Tokyo, Japan</p>
+						<p class="mt-2 justify mb-3">All coursework was taught in Japanese (readings, lectures, and
+							assessments).</p>
 
-						<p class="mb-1 justify" data-en="Graduate-level courses" data-es="Asignaturas de posgrado"></p>
+						<p class="mb-1 justify">Graduate-level courses</p>
 						<ul class="mt-1 mb-3 ps-3 abme-honors-bullet">
-							<li class="justify" data-en="Computer vision" data-es="Visión por computador"></li>
-							<li class="justify mt-2" data-en="Natural language processing"
-								data-es="Procesamiento del lenguaje natural"></li>
-							<li class="justify mt-2" data-en="Advanced wireless access"
-								data-es="Acceso inalámbrico avanzado"></li>
-							<li class="justify mt-2" data-en="Distributed, embedded, and real-time processing"
-								data-es="Procesamiento distribuido, empotrado y en tiempo real"></li>
+							<li class="justify">Computer vision</li>
+							<li class="justify mt-2">Natural language processing</li>
+							<li class="justify mt-2">Advanced wireless access</li>
+							<li class="justify mt-2">Distributed, embedded, and real-time processing</li>
 						</ul>
 
-						<p class="mb-1 justify" data-en="Other courses" data-es="Otras asignaturas"></p>
+						<p class="mb-1 justify">Other courses</p>
 						<ul class="mt-1 mb-0 ps-3 abme-honors-bullet">
-							<li class="justify" data-en="Artificial intelligence and logic"
-								data-es="Inteligencia artificial y lógica"></li>
-							<li class="justify mt-2" data-en="Artificial intelligence and complex systems"
-								data-es="Inteligencia artificial y sistemas complejos"></li>
-							<li class="justify mt-2" data-en="Operating systems" data-es="Sistemas operativos"></li>
-							<li class="justify mt-2" data-en="Software engineering" data-es="Ingeniería del software">
-							</li>
-							<li class="justify mt-2" data-en="Data mining" data-es="Minería de datos"></li>
+							<li class="justify">Artificial intelligence and logic</li>
+							<li class="justify mt-2">Artificial intelligence and complex systems</li>
+							<li class="justify mt-2">Operating systems</li>
+							<li class="justify mt-2">Software engineering</li>
+							<li class="justify mt-2">Data mining</li>
 						</ul>
 					</div>
 				</div>
@@ -424,9 +375,9 @@
 
 			<!-- Writing & press -->
 			<div class="col-md-8 offset-md-1 mb-5" id="blogContent">
-				<div class="container language">
+				<div class="container">
 
-					<h3 class="h4 mt-2" data-es="Prensa y menciones" data-en="Press and mentions"></h3>
+					<h3 class="h4 mt-2">Press and mentions</h3>
 
 					<div class="row mt-2">
 						<h2 class="pub-year-h2">2026</h2>
@@ -439,10 +390,8 @@
 							</div>
 							<div class="pub-authors mt-1">Emerging Technology Observatory (Substack) · May 19, 2026
 							</div>
-							<div class="pub-congress"
-								data-en="Policy post on high-growth AI and cybersecurity clusters in the Map of Science I contributed to."
-								data-es="Policy post on high-growth AI and cybersecurity clusters in the Map of Science I contributed to.">
-							</div>
+							<div class="pub-congress">Policy post on high-growth AI and cybersecurity clusters in the Map
+								of Science I contributed to.</div>
 						</div>
 						<div class="pub-block mt-4">
 							<div class="lucida-console h5 mb-1">
@@ -452,10 +401,8 @@
 							</div>
 							<div class="pub-authors mt-1">Emerging Technology Observatory (Substack) · Apr 27, 2026
 							</div>
-							<div class="pub-congress"
-								data-es="Actualización del Map of Science (ETO / CSET); relacionado con mi trabajo en el equipo de datos."
-								data-en="Map of Science product update (ETO / CSET); related to my work with the data team.">
-							</div>
+							<div class="pub-congress">Map of Science product update (ETO / CSET); related to my work with
+								the data team.</div>
 						</div>
 					</div>
 
@@ -469,9 +416,7 @@
 							</div>
 							<div class="pub-authors mt-1">Erik Jonsson School of Engineering &amp; Computer Science, UT
 								Dallas</div>
-							<div class="pub-congress"
-								data-es="Perfil de la beca Barry Goldwater (archivo de verano 2025)."
-								data-en="Barry Goldwater Scholarship profile (summer 2025 archive)."></div>
+							<div class="pub-congress">Barry Goldwater Scholarship profile (summer 2025 archive).</div>
 						</div>
 						<div class="pub-block mt-4">
 							<div class="lucida-console h5 mb-1">
@@ -481,64 +426,62 @@
 									Undergrads Win Goldwater Scholarships</a>
 							</div>
 							<div class="pub-authors mt-1">UT Dallas News Center · May 28, 2025</div>
-							<div class="pub-congress"
-								data-es="Cobertura central de campus sobre los becarios Goldwater 2025."
-								data-en="Central campus news coverage of 2025 Goldwater Scholars."></div>
+							<div class="pub-congress">Central campus news coverage of 2025 Goldwater Scholars.</div>
 						</div>
 					</div>
+				</div>
+			</div>
+
+			<!-- Blog (Markdown posts) -->
+			<div class="col-md-8 offset-md-1 mb-5" id="postsContent">
+				<div class="container">
+					<div id="blogListView"></div>
+					<div id="blogPostView" style="display:none;"></div>
 				</div>
 			</div>
 
 			<!-- Teaching -->
 			<div class="col-md-8 offset-md-1 mb-5" id="academicContent">
 				<div class="container">
-					<div class="row mt-2 language">
+					<div class="row mt-2">
 						<h2 class="academic-year-h2">2025</h2>
 						<div class="academic-block mt-2">
 							<div class="lucida-console h5 academic-name">UTD CS 1337 — Computer Science I</div>
-							<div class="academic-rol mt-1"><span data-en="Grader" data-es="Calificador"></span></div>
-							<div class="academic-year"><span data-en="Fall 2025" data-es="Otoño 2025"></span></div>
+							<div class="academic-rol mt-1"><span>Grader</span></div>
+							<div class="academic-year"><span>Fall 2025</span></div>
 						</div>
 					</div>
-					<div class="row mt-4 language">
+					<div class="row mt-4">
 						<h2 class="academic-year-h2">2024</h2>
 						<div class="academic-block">
 							<div class="lucida-console h5 academic-name">UTD CS 2336 — Computer Science II</div>
-							<div class="academic-rol mt-1"><span data-en="Grader" data-es="Calificador"></span></div>
-							<div class="academic-year"><span data-en="Spring 2024" data-es="Primavera 2024"></span>
-							</div>
+							<div class="academic-rol mt-1"><span>Grader</span></div>
+							<div class="academic-year"><span>Spring 2024</span></div>
 						</div>
 						<div class="academic-block mt-4">
 							<div class="lucida-console h5 academic-name">UTD CS 1337 — Computer Science I</div>
-							<div class="academic-rol mt-1"><span data-en="Teaching Assistant"
-									data-es="Asistente de enseñanza"></span></div>
-							<div class="academic-year"><span data-en="Spring 2024" data-es="Primavera 2024"></span>
-							</div>
+							<div class="academic-rol mt-1"><span>Teaching Assistant</span></div>
+							<div class="academic-year"><span>Spring 2024</span></div>
 						</div>
 						<div class="academic-block mt-4">
 							<div class="lucida-console h5 academic-name">ICODE School — Introduction to Web Development
 							</div>
-							<div class="academic-rol mt-1"><span data-en="Technical Lead"
-									data-es="Líder técnico"></span></div>
-							<div class="academic-year"><span data-en="Fall 2023 – Spring 2024"
-									data-es="Otoño 2023 – Primavera 2024"></span></div>
+							<div class="academic-rol mt-1"><span>Technical Lead</span></div>
+							<div class="academic-year"><span>Fall 2023 – Spring 2024</span></div>
 						</div>
 					</div>
-					<div class="row mt-4 language">
+					<div class="row mt-4">
 						<h2 class="academic-year-h2">2023</h2>
 						<div class="academic-block">
 							<div class="lucida-console h5 academic-name">UTD CS 1334 — Programming Fundamentals for
 								Non-Majors</div>
-							<div class="academic-rol mt-1"><span data-en="Teaching Assistant"
-									data-es="Asistente de enseñanza"></span></div>
-							<div class="academic-year"><span data-en="Fall 2023" data-es="Otoño 2023"></span></div>
+							<div class="academic-rol mt-1"><span>Teaching Assistant</span></div>
+							<div class="academic-year"><span>Fall 2023</span></div>
 						</div>
 						<div class="academic-block mt-4">
 							<div class="lucida-console h5 academic-name">Garland ISD — Various mathematics courses</div>
-							<div class="academic-rol mt-1"><span data-en="Substitute teacher"
-									data-es="Profesor sustituto"></span></div>
-							<div class="academic-year"><span data-en="Fall 2023 – Present"
-									data-es="Otoño 2023 – presente"></span></div>
+							<div class="academic-rol mt-1"><span>Substitute teacher</span></div>
+							<div class="academic-year"><span>Fall 2023 – Present</span></div>
 						</div>
 					</div>
 				</div>
@@ -546,7 +489,7 @@
 
 			<!-- Conferences -->
 			<div class="col-md-8 offset-md-1 mb-5" id="conferencesContent">
-				<div class="container language">
+				<div class="container">
 					<div class="row mt-2">
 						<h2 class="pub-year-h2">2025</h2>
 						<div class="lucida-console h5">Head Shape Analysis Using Custom Feature Extraction</div>
@@ -569,100 +512,58 @@
 
 			<!-- Experience -->
 			<div class="col-md-8 offset-md-1" id="experienceContent">
-				<div class="container language">
-					<h3 class="h5 mt-2" data-es="Investigación" data-en="Research"></h3>
+				<div class="container">
+					<h3 class="h5 mt-2">Research</h3>
 					<ul>
-						<li class="justify"><strong data-en="Undergraduate Researcher"
-								data-es="Investigador de pregrado">Undergraduate Researcher</strong>, Dr. Tien Nguyen —
-							<span data-en="Attention reallocation for LLMs in software engineering; present."
-								data-es="Reasignación de atención en LLM para ingeniería de software; presente."></span>
+						<li class="justify"><strong>Undergraduate Researcher</strong>, Dr. Tien Nguyen —
+							Attention reallocation for LLMs in software engineering; present.
 						</li>
-						<li class="justify mt-2"><strong>DAAD RISE</strong>, SprintML, CISPA Helmholtz Center — <span
-								data-en="Summer 2026 (incoming intern)."
-								data-es="Verano 2026 (prácticas próximas)."></span></li>
-						<li class="justify mt-2"><strong data-en="Research Assistant"
-								data-es="Asistente de investigación">Research Assistant</strong>, Dr. Kumiko
-							Tanaka-Ishii — <span
-								data-en="Recurrence quantification analysis of frontier AI models; Fall 2024 – Summer 2025."
-								data-es="Análisis de cuantificación de recurrencia en modelos frontera de IA; otoño 2024 – verano 2025."></span>
+						<li class="justify mt-2"><strong>DAAD RISE</strong>, SprintML, CISPA Helmholtz Center — Summer
+							2026 (incoming intern).</li>
+						<li class="justify mt-2"><strong>Research Assistant</strong>, Dr. Kumiko
+							Tanaka-Ishii — Recurrence quantification analysis of frontier AI models; Fall 2024 – Summer
+							2025.
 						</li>
-						<li class="justify mt-2"><strong data-en="Undergraduate Researcher"
-								data-es="Investigador de pregrado">Undergraduate Researcher</strong>, Dr. Ovidiu Daescu
-							— <span
-								data-en="Computer vision and feature selection (cranial shape analysis); Spring 2024 – present."
-								data-es="Visión por computador y selección de rasgos (forma craneal); primavera 2024 – presente."></span>
+						<li class="justify mt-2"><strong>Undergraduate Researcher</strong>, Dr. Ovidiu Daescu
+							— Computer vision and feature selection (cranial shape analysis); Spring 2024 – present.
 						</li>
-						<li class="justify mt-2"><strong data-en="Research Intern"
-								data-es="Pasante de investigación">Research Intern</strong>, Hsu Lab — <span
-								data-en="ML for materials science; Summer 2024."
-								data-es="ML para ciencia de materiales; verano 2024."></span></li>
-						<li class="justify mt-2"><strong data-en="Student Researcher"
-								data-es="Estudiante investigador">Student Researcher</strong>, Dr. Doug DeGroot — <span
-								data-en="Sentiment analysis for movie reviews; Fall 2023."
-								data-es="Análisis de sentimiento de reseñas de cine; otoño 2023."></span></li>
+						<li class="justify mt-2"><strong>Research Intern</strong>, Hsu Lab — ML for materials science;
+							Summer 2024.</li>
+						<li class="justify mt-2"><strong>Student Researcher</strong>, Dr. Doug DeGroot — Sentiment
+							analysis for movie reviews; Fall 2023.</li>
 					</ul>
-					<h3 class="h5 mt-4" data-es="Industria" data-en="Industry"></h3>
+					<h3 class="h5 mt-4">Industry</h3>
 					<ul>
-						<li class="justify"><strong>CSET</strong>, Georgetown University — <span
-								data-en="Intern, Spring 2026." data-es="Pasante, primavera 2026."></span></li>
-						<li class="justify mt-2"><strong>Onplanetz</strong> — <span
-								data-en="AI Engineer Intern; Fall 2024 – Spring 2025."
-								data-es="Pasante de ingeniería de IA; otoño 2024 – primavera 2025."></span></li>
-						<li class="justify mt-2"><strong>Relativity</strong>, AI Studio Fellow — <span
-								data-en="Bias and representation in frontier models; Fall 2024."
-								data-es="Sesgo y representación en modelos frontera; otoño 2024."></span></li>
+						<li class="justify"><strong>CSET</strong>, Georgetown University — Intern, Spring 2026.</li>
+						<li class="justify mt-2"><strong>Onplanetz</strong> — AI Engineer Intern; Fall 2024 – Spring 2025.
+						</li>
+						<li class="justify mt-2"><strong>Relativity</strong>, AI Studio Fellow — Bias and representation
+							in frontier models; Fall 2024.</li>
 					</ul>
-					<h3 class="h5 mt-4" data-es="Otras experiencias" data-en="Other experience"></h3>
+					<h3 class="h5 mt-4">Other experience</h3>
 					<ul>
-						<li class="justify">UT Dallas Office of Research — <span
-								data-en="Research Information Systems; Summer 2024."
-								data-es="Sistemas de información de investigación; verano 2024."></span></li>
-						<li class="justify mt-2">Break Through Tech AI — <span
-								data-en="AI/ML Fellow, May 2024 – May 2025."
-								data-es="Becario AI/ML, may 2024 – may 2025."></span></li>
-						<li class="justify mt-2">ACM UTD — <span data-en="Back-end developer, Feb 2024 – Apr 2024."
-								data-es="Desarrollador back-end, feb 2024 – abr 2024."></span></li>
-						<li class="justify mt-2">UTDesign — <span
-								data-en="Frontend software developer, Jan 2024 – May 2024."
-								data-es="Desarrollador front-end, ene 2024 – may 2024."></span></li>
-						<li class="justify mt-2">Wolters Kluwer Tax and Accounting — <span data-en="Extern, Mar 2023."
-								data-es="Externo, mar 2023."></span></li>
+						<li class="justify">UT Dallas Office of Research — Research Information Systems; Summer 2024.</li>
+						<li class="justify mt-2">Break Through Tech AI — AI/ML Fellow, May 2024 – May 2025.</li>
+						<li class="justify mt-2">ACM UTD — Back-end developer, Feb 2024 – Apr 2024.</li>
+						<li class="justify mt-2">UTDesign — Frontend software developer, Jan 2024 – May 2024.</li>
+						<li class="justify mt-2">Wolters Kluwer Tax and Accounting — Extern, Mar 2023.</li>
 					</ul>
-					<h3 class="h5 mt-4" data-es="Comunidad" data-en="Community"></h3>
+					<h3 class="h5 mt-4">Community</h3>
 					<ul>
-						<li class="justify">UT Design — <span data-en="Code review volunteer, Summer 2024."
-								data-es="Voluntario de revisión de código, verano 2024."></span></li>
-						<li class="justify mt-2">UTD Society of Asian Scientists and Engineers — <span
-								data-en="Secretary and Chair, Jan 2023 – Aug 2024."
-								data-es="Secretario y presidente, ene 2023 – ago 2024."></span></li>
-						<li class="justify mt-2">UTD Artificial Intelligence Society — <span
-								data-en="Officer, Oct 2022 – May 2023."
-								data-es="Cargo directivo, oct 2022 – may 2023."></span></li>
+						<li class="justify">UT Design — Code review volunteer, Summer 2024.</li>
+						<li class="justify mt-2">UTD Society of Asian Scientists and Engineers — Secretary and Chair, Jan
+							2023 – Aug 2024.</li>
+						<li class="justify mt-2">UTD Artificial Intelligence Society — Officer, Oct 2022 – May 2023.</li>
 					</ul>
 				</div>
 			</div>
 
 			<!-- Projects -->
 			<div class="col-md-8 offset-md-1" id="projectsContent">
-				<div class="container language">
-					<p class="mt-2 justify"
-						data-es="Los proyectos destacados están integrados en la sección de experiencia e investigación."
-						data-en="Highlighted projects are listed under Experience and research roles.">
-					</p>
+				<div class="container">
+					<p class="mt-2 justify">Highlighted projects are listed under Experience and research roles.</p>
 				</div>
 			</div>
-
-			<!-- Photos -->
-			<!-- <div class="col-md-8 offset-md-1 mb-5" id="photosContent">
-					<h2 class="section-title language" 
-						data-en="Photos" 
-						data-es="Fotos">
-					</h2>
-					<p class="language" 
-						data-en="Here you can find some of my photos." 
-						data-es="Aquí puedes encontrar algunas de mis fotos.">
-					</p>
-				</div> -->
 
 
 		</div>
@@ -676,8 +577,16 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-	<script src="assets/js/languageManager.js"></script>
+
+	<!-- Blog rendering: markdown -> sanitize -> highlight + math -->
+	<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
 	<script src="assets/js/main.js"></script>
+	<script src="assets/js/blog.js"></script>
 </body>
 
 </html>
