@@ -1,5 +1,16 @@
 [
   {
+    "slug": "metaphors-we-hallucinate-by",
+    "title": "Metaphors We Hallucinate By",
+    "date": "2026-07-15",
+    "summary": "There are more things in brains and networks, Horatio, than are dreamt of in your metaphors.",
+    "tags": [
+      "llm",
+      "linguistics"
+    ],
+    "file": "2026-07-15-metaphors-we-hallucinate-by.md"
+  },
+  {
     "slug": "what-language-models-represent",
     "title": "Towards a Sort of AI Poetry",
     "date": "2026-07-14",
@@ -8,6 +19,6 @@
       "nlp",
       "poetry"
     ],
-    "file": "2026-06-01-what-language-models-represent.md"
+    "file": "2026-07-14-what-language-models-represent.md"
   }
 ]

@@ -1,6 +1,25 @@
 # Blog
 
-Posts are plain Markdown files in [`posts/`](posts/). To publish a new post:
+Posts are plain Markdown files in [`posts/`](posts/). Anything in `posts/` is
+published — there is no draft flag. Half-finished writing goes in
+[`drafts/`](drafts/) instead, which is gitignored and never leaves this machine.
+
+## Drafting
+
+Drop a `.md` anywhere in `drafts/` and write freely — no front matter or date
+prefix needed yet. Nothing there is committed, pushed, or served.
+
+When it's ready, give it front matter and move it into `posts/` with a dated
+filename:
+
+```bash
+mv blog/drafts/my-idea.md blog/posts/2026-08-01-my-idea.md
+```
+
+(Plain `mv`, not `git mv` — git refuses to move a file it isn't tracking.) Then
+follow the publishing steps below.
+
+## Publishing
 
 1. Create a file named `posts/YYYY-MM-DD-your-slug.md` (the date and slug come
    from the filename).

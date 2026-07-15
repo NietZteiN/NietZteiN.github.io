@@ -1,1 +1,6 @@
 .DS_Store
+
+# Drafts are a private scratchpad — never committed, so never reachable on the
+# public site. Publish one by moving it into blog/posts/. See blog/drafts/README.md.
+blog/drafts/*
+!blog/drafts/README.md
