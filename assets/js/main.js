@@ -4,7 +4,7 @@ $(document).ready(function(){
 	$('#educationContent').hide();
 	$('#publicationsContent').hide();
 	$('#experienceContent').hide();
-	$('#conferencesContent').hide();
+	$('#presentationsContent').hide();
 	$('#projectsContent').hide();
 	$('#blogContent').hide();
 	$('#postsContent').hide();
@@ -144,8 +144,8 @@ $(document).ready(function(){
 		}
 	});
 
-	// Handle 'Conferences' content
-	$('#conferences').click(function(e) {
+	// Handle 'Presentations' content
+	$('#presentations').click(function(e) {
 
 		// If the div has already the class active, no need to reload the divs...
 		if(!$(e.target).hasClass('active')) {
@@ -157,7 +157,7 @@ $(document).ready(function(){
 			clearActiveDivs();
 
 			// Show current content
-			activateDiv('#conferencesContent');
+			activateDiv('#presentationsContent');
 		}
 	});
 
